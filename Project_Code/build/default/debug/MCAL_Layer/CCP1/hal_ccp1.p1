@@ -1,0 +1,1170 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F3066 `(v ~T0 @X0 0 tf ]
+"16 MCAL_Layer/CCP1/hal_ccp1.c
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 16: Std_ReturnType CCP1_CAPTURE_Init(const ccp1_t *ccp1_obj){
+[c E3032 0 1 2 .. ]
+[n E3032 . CCP1_CAPTURE_MODE_SELECTED CCP1_COMPARE_MODE_SELECTED CCP1_PWM_MODE_SELECTED  ]
+"74 MCAL_Layer/CCP1/../interrupt/../GPIO/hal_gpio.h
+[s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S273 . port pin direction logic ]
+[v F3054 `(v ~T0 @X0 0 tf ]
+"16 MCAL_Layer/CCP1/hal_ccp1.c
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 16: Std_ReturnType CCP1_CAPTURE_Init(const ccp1_t *ccp1_obj){
+[c E3028 0 1 .. ]
+[n E3028 . Interrupt_Periority_LOW Interrupt_Periority_HIGH  ]
+"79 MCAL_Layer/CCP1/hal_ccp1.h
+[; ;MCAL_Layer/CCP1/hal_ccp1.h: 79: typedef struct{
+[s S277 `E3032 1 `uc 1 `S273 1 `ui 1 :2 `uc 1 :2 `uc 1 `*F3054 1 `E3028 1 ]
+[n S277 . ccp1_mode ccp1_mode_variant ccp1_pin PWM_Freq timer2_prescaler_value timer2_postscaler_value CCP1_Interrupt_Hundeler CCP1_priority ]
+"4261 MCAL_Layer/CCP1/../interrupt/../../../../Embeded-Compiler/pic/include/proc/pic18f4620.h
+[s S163 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S163 . CCP1M DC1B P1M ]
+"4266
+[s S164 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S164 . CCP1M0 CCP1M1 CCP1M2 CCP1M3 CCP1Y CCP1X P1M0 P1M1 ]
+"4276
+[s S165 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S165 . . DC1B0 DC1B1 ]
+"4260
+[u S162 `S163 1 `S164 1 `S165 1 ]
+[n S162 . . . . ]
+"4282
+[v _CCP1CONbits `VS162 ~T0 @X0 0 e@4029 ]
+"88 MCAL_Layer/CCP1/../interrupt/../GPIO/hal_gpio.h
+[v _gpio_pin_intialize `(uc ~T0 @X0 0 ef1`*CS273 ]
+"2503 MCAL_Layer/CCP1/../interrupt/../../../../Embeded-Compiler/pic/include/proc/pic18f4620.h
+[s S86 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S86 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"2513
+[s S87 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S87 . . TX1IE RC1IE ]
+"2502
+[u S85 `S86 1 `S87 1 ]
+[n S85 . . . ]
+"2519
+[v _PIE1bits `VS85 ~T0 @X0 0 e@3997 ]
+"2580
+[s S89 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S89 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"2590
+[s S90 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S90 . . TX1IF RC1IF ]
+"2579
+[u S88 `S89 1 `S90 1 ]
+[n S88 . . . ]
+"2596
+[v _PIR1bits `VS88 ~T0 @X0 0 e@3998 ]
+"6380
+[s S258 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S258 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"6390
+[s S259 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S259 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"6400
+[s S260 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S260 . . GIEL GIEH ]
+"6379
+[u S257 `S258 1 `S259 1 `S260 1 ]
+[n S257 . . . . ]
+"6406
+[v _INTCONbits `VS257 ~T0 @X0 0 e@4082 ]
+"70 MCAL_Layer/CCP1/hal_ccp1.h
+[; ;MCAL_Layer/CCP1/hal_ccp1.h: 70:     struct{
+[s S275 `uc 1 `uc 1 ]
+[n S275 . ccp1_low ccp1_high ]
+"74
+[; ;MCAL_Layer/CCP1/hal_ccp1.h: 74:     struct{
+[s S276 `us 1 ]
+[n S276 . ccp1_16bit ]
+"69
+[; ;MCAL_Layer/CCP1/hal_ccp1.h: 69: typedef union{
+[u S274 `S275 1 `S276 1 ]
+[n S274 . . . ]
+"4359 MCAL_Layer/CCP1/../interrupt/../../../../Embeded-Compiler/pic/include/proc/pic18f4620.h
+[v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
+"4366
+[v _CCPR1H `Vuc ~T0 @X0 0 e@4031 ]
+"5107
+[v _PR2 `Vuc ~T0 @X0 0 e@4043 ]
+"54 MCAL_Layer/CCP1/../interrupt/../../../../Embeded-Compiler/pic/include/proc/pic18f4620.h
+[; <" PORTA equ 0F80h ;# ">
+"191
+[; <" PORTB equ 0F81h ;# ">
+"362
+[; <" PORTC equ 0F82h ;# ">
+"537
+[; <" PORTD equ 0F83h ;# ">
+"679
+[; <" PORTE equ 0F84h ;# ">
+"882
+[; <" LATA equ 0F89h ;# ">
+"994
+[; <" LATB equ 0F8Ah ;# ">
+"1106
+[; <" LATC equ 0F8Bh ;# ">
+"1218
+[; <" LATD equ 0F8Ch ;# ">
+"1330
+[; <" LATE equ 0F8Dh ;# ">
+"1382
+[; <" TRISA equ 0F92h ;# ">
+"1387
+[; <" DDRA equ 0F92h ;# ">
+"1604
+[; <" TRISB equ 0F93h ;# ">
+"1609
+[; <" DDRB equ 0F93h ;# ">
+"1826
+[; <" TRISC equ 0F94h ;# ">
+"1831
+[; <" DDRC equ 0F94h ;# ">
+"2048
+[; <" TRISD equ 0F95h ;# ">
+"2053
+[; <" DDRD equ 0F95h ;# ">
+"2270
+[; <" TRISE equ 0F96h ;# ">
+"2275
+[; <" DDRE equ 0F96h ;# ">
+"2434
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"2499
+[; <" PIE1 equ 0F9Dh ;# ">
+"2576
+[; <" PIR1 equ 0F9Eh ;# ">
+"2653
+[; <" IPR1 equ 0F9Fh ;# ">
+"2730
+[; <" PIE2 equ 0FA0h ;# ">
+"2796
+[; <" PIR2 equ 0FA1h ;# ">
+"2862
+[; <" IPR2 equ 0FA2h ;# ">
+"2928
+[; <" EECON1 equ 0FA6h ;# ">
+"2994
+[; <" EECON2 equ 0FA7h ;# ">
+"3001
+[; <" EEDATA equ 0FA8h ;# ">
+"3008
+[; <" EEADR equ 0FA9h ;# ">
+"3015
+[; <" EEADRH equ 0FAAh ;# ">
+"3022
+[; <" RCSTA equ 0FABh ;# ">
+"3027
+[; <" RCSTA1 equ 0FABh ;# ">
+"3232
+[; <" TXSTA equ 0FACh ;# ">
+"3237
+[; <" TXSTA1 equ 0FACh ;# ">
+"3488
+[; <" TXREG equ 0FADh ;# ">
+"3493
+[; <" TXREG1 equ 0FADh ;# ">
+"3500
+[; <" RCREG equ 0FAEh ;# ">
+"3505
+[; <" RCREG1 equ 0FAEh ;# ">
+"3512
+[; <" SPBRG equ 0FAFh ;# ">
+"3517
+[; <" SPBRG1 equ 0FAFh ;# ">
+"3524
+[; <" SPBRGH equ 0FB0h ;# ">
+"3531
+[; <" T3CON equ 0FB1h ;# ">
+"3643
+[; <" TMR3 equ 0FB2h ;# ">
+"3650
+[; <" TMR3L equ 0FB2h ;# ">
+"3657
+[; <" TMR3H equ 0FB3h ;# ">
+"3664
+[; <" CMCON equ 0FB4h ;# ">
+"3754
+[; <" CVRCON equ 0FB5h ;# ">
+"3833
+[; <" ECCP1AS equ 0FB6h ;# ">
+"3915
+[; <" PWM1CON equ 0FB7h ;# ">
+"3985
+[; <" BAUDCON equ 0FB8h ;# ">
+"3990
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4157
+[; <" CCP2CON equ 0FBAh ;# ">
+"4236
+[; <" CCPR2 equ 0FBBh ;# ">
+"4243
+[; <" CCPR2L equ 0FBBh ;# ">
+"4250
+[; <" CCPR2H equ 0FBCh ;# ">
+"4257
+[; <" CCP1CON equ 0FBDh ;# ">
+"4354
+[; <" CCPR1 equ 0FBEh ;# ">
+"4361
+[; <" CCPR1L equ 0FBEh ;# ">
+"4368
+[; <" CCPR1H equ 0FBFh ;# ">
+"4375
+[; <" ADCON2 equ 0FC0h ;# ">
+"4446
+[; <" ADCON1 equ 0FC1h ;# ">
+"4531
+[; <" ADCON0 equ 0FC2h ;# ">
+"4650
+[; <" ADRES equ 0FC3h ;# ">
+"4657
+[; <" ADRESL equ 0FC3h ;# ">
+"4664
+[; <" ADRESH equ 0FC4h ;# ">
+"4671
+[; <" SSPCON2 equ 0FC5h ;# ">
+"4733
+[; <" SSPCON1 equ 0FC6h ;# ">
+"4803
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5024
+[; <" SSPADD equ 0FC8h ;# ">
+"5031
+[; <" SSPBUF equ 0FC9h ;# ">
+"5038
+[; <" T2CON equ 0FCAh ;# ">
+"5109
+[; <" PR2 equ 0FCBh ;# ">
+"5114
+[; <" MEMCON equ 0FCBh ;# ">
+"5219
+[; <" TMR2 equ 0FCCh ;# ">
+"5226
+[; <" T1CON equ 0FCDh ;# ">
+"5329
+[; <" TMR1 equ 0FCEh ;# ">
+"5336
+[; <" TMR1L equ 0FCEh ;# ">
+"5343
+[; <" TMR1H equ 0FCFh ;# ">
+"5350
+[; <" RCON equ 0FD0h ;# ">
+"5483
+[; <" WDTCON equ 0FD1h ;# ">
+"5511
+[; <" HLVDCON equ 0FD2h ;# ">
+"5516
+[; <" LVDCON equ 0FD2h ;# ">
+"5781
+[; <" OSCCON equ 0FD3h ;# ">
+"5858
+[; <" T0CON equ 0FD5h ;# ">
+"5935
+[; <" TMR0 equ 0FD6h ;# ">
+"5942
+[; <" TMR0L equ 0FD6h ;# ">
+"5949
+[; <" TMR0H equ 0FD7h ;# ">
+"5956
+[; <" STATUS equ 0FD8h ;# ">
+"6027
+[; <" FSR2 equ 0FD9h ;# ">
+"6034
+[; <" FSR2L equ 0FD9h ;# ">
+"6041
+[; <" FSR2H equ 0FDAh ;# ">
+"6048
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6055
+[; <" PREINC2 equ 0FDCh ;# ">
+"6062
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6069
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6076
+[; <" INDF2 equ 0FDFh ;# ">
+"6083
+[; <" BSR equ 0FE0h ;# ">
+"6090
+[; <" FSR1 equ 0FE1h ;# ">
+"6097
+[; <" FSR1L equ 0FE1h ;# ">
+"6104
+[; <" FSR1H equ 0FE2h ;# ">
+"6111
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6118
+[; <" PREINC1 equ 0FE4h ;# ">
+"6125
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6132
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6139
+[; <" INDF1 equ 0FE7h ;# ">
+"6146
+[; <" WREG equ 0FE8h ;# ">
+"6158
+[; <" FSR0 equ 0FE9h ;# ">
+"6165
+[; <" FSR0L equ 0FE9h ;# ">
+"6172
+[; <" FSR0H equ 0FEAh ;# ">
+"6179
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6186
+[; <" PREINC0 equ 0FECh ;# ">
+"6193
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6200
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6207
+[; <" INDF0 equ 0FEFh ;# ">
+"6214
+[; <" INTCON3 equ 0FF0h ;# ">
+"6306
+[; <" INTCON2 equ 0FF1h ;# ">
+"6376
+[; <" INTCON equ 0FF2h ;# ">
+"6493
+[; <" PROD equ 0FF3h ;# ">
+"6500
+[; <" PRODL equ 0FF3h ;# ">
+"6507
+[; <" PRODH equ 0FF4h ;# ">
+"6514
+[; <" TABLAT equ 0FF5h ;# ">
+"6523
+[; <" TBLPTR equ 0FF6h ;# ">
+"6530
+[; <" TBLPTRL equ 0FF6h ;# ">
+"6537
+[; <" TBLPTRH equ 0FF7h ;# ">
+"6544
+[; <" TBLPTRU equ 0FF8h ;# ">
+"6553
+[; <" PCLAT equ 0FF9h ;# ">
+"6560
+[; <" PC equ 0FF9h ;# ">
+"6567
+[; <" PCL equ 0FF9h ;# ">
+"6574
+[; <" PCLATH equ 0FFAh ;# ">
+"6581
+[; <" PCLATU equ 0FFBh ;# ">
+"6588
+[; <" STKPTR equ 0FFCh ;# ">
+"6694
+[; <" TOS equ 0FFDh ;# ">
+"6701
+[; <" TOSL equ 0FFDh ;# ">
+"6708
+[; <" TOSH equ 0FFEh ;# ">
+"6715
+[; <" TOSU equ 0FFFh ;# ">
+"11 MCAL_Layer/CCP1/hal_ccp1.c
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 11: static void (*CCPI_Interrupt_Hundeler)(void);
+[v _CCPI_Interrupt_Hundeler `*F3066 ~T0 @X0 1 s ]
+"16
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 16: Std_ReturnType CCP1_CAPTURE_Init(const ccp1_t *ccp1_obj){
+[v _CCP1_CAPTURE_Init `(uc ~T0 @X0 1 ef1`*CS277 ]
+{
+[e :U _CCP1_CAPTURE_Init ]
+[v _ccp1_obj `*CS277 ~T0 @X0 1 r1 ]
+[f ]
+"17
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 17: Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"18
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 18: if(ccp1_obj == ((void*)0)){
+[e $ ! == _ccp1_obj -> -> -> 0 `i `*v `*CS277 279  ]
+{
+"19
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 19: ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"20
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 20: }
+}
+[e $U 280  ]
+"21
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 21: else{
+[e :U 279 ]
+{
+"22
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 22:      (CCP1CONbits.CCP1M = ((uint_8)0x00));
+[e = . . _CCP1CONbits 0 0 -> -> 0 `i `uc ]
+"23
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 23:     if(ccp1_obj->ccp1_mode == CCP1_CAPTURE_MODE_SELECTED){
+[e $ ! == -> . *U _ccp1_obj 0 `ui -> . `E3032 0 `ui 281  ]
+{
+"24
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 24:       switch(ccp1_obj->ccp1_mode_variant){
+[e $U 283  ]
+{
+"25
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 25:            case ((uint_8)0x04):
+[e :U 284 ]
+"26
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 26:            (CCP1CONbits.CCP1M = ((uint_8)0x04));
+[e = . . _CCP1CONbits 0 0 -> -> 4 `i `uc ]
+"27
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 27:            break;
+[e $U 282  ]
+"28
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 28:            case ((uint_8)0x05):
+[e :U 285 ]
+"29
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 29:            (CCP1CONbits.CCP1M = ((uint_8)0x05));
+[e = . . _CCP1CONbits 0 0 -> -> 5 `i `uc ]
+"30
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 30:            break;
+[e $U 282  ]
+"31
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 31:            case ((uint_8)0x06):
+[e :U 286 ]
+"32
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 32:            (CCP1CONbits.CCP1M = ((uint_8)0x06));
+[e = . . _CCP1CONbits 0 0 -> -> 6 `i `uc ]
+"33
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 33:            break;
+[e $U 282  ]
+"34
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 34:            case ((uint_8)0x07):
+[e :U 287 ]
+"35
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 35:            (CCP1CONbits.CCP1M = ((uint_8)0x07));
+[e = . . _CCP1CONbits 0 0 -> -> 7 `i `uc ]
+"36
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 36:            break;
+[e $U 282  ]
+"37
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 37:           default: ret = (Std_ReturnType)0x00;
+[e :U 288 ]
+[e = _ret -> -> 0 `i `uc ]
+"38
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 38:       }
+}
+[e $U 282  ]
+[e :U 283 ]
+[e [\ -> . *U _ccp1_obj 1 `i , $ -> -> -> 4 `i `uc `i 284
+ , $ -> -> -> 5 `i `uc `i 285
+ , $ -> -> -> 6 `i `uc `i 286
+ , $ -> -> -> 7 `i `uc `i 287
+ 288 ]
+[e :U 282 ]
+"39
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 39:       ret = gpio_pin_intialize(&(ccp1_obj->ccp1_pin));
+[e = _ret ( _gpio_pin_intialize (1 &U . *U _ccp1_obj 2 ]
+"41
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 41: (PIE1bits.CCP1IE = 1);
+[e = . . _PIE1bits 0 2 -> -> 1 `i `uc ]
+"42
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 42: (PIR1bits.CCP1IF = 0);
+[e = . . _PIR1bits 0 2 -> -> 0 `i `uc ]
+"43
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 43: CCPI_Interrupt_Hundeler = ccp1_obj->CCP1_Interrupt_Hundeler;
+[e = _CCPI_Interrupt_Hundeler . *U _ccp1_obj 6 ]
+"56
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 56:   (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"57
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 57:   (INTCONbits.PEIE = 0);
+[e = . . _INTCONbits 1 6 -> -> 0 `i `uc ]
+"62
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 62:     }
+}
+[e :U 281 ]
+"63
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 63: }
+}
+[e :U 280 ]
+"64
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 64:     return ret;
+[e ) _ret ]
+[e $UE 278  ]
+"65
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 65: }
+[e :UE 278 ]
+}
+"67
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 67: Std_ReturnType CCP1_CAPTURE_Deinit(const ccp1_t *ccp1_obj){
+[v _CCP1_CAPTURE_Deinit `(uc ~T0 @X0 1 ef1`*CS277 ]
+{
+[e :U _CCP1_CAPTURE_Deinit ]
+[v _ccp1_obj `*CS277 ~T0 @X0 1 r1 ]
+[f ]
+"68
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 68: Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"69
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 69: if(ccp1_obj == ((void*)0)){
+[e $ ! == _ccp1_obj -> -> -> 0 `i `*v `*CS277 290  ]
+{
+"70
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 70: ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"71
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 71: }
+}
+[e $U 291  ]
+"72
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 72: else{
+[e :U 290 ]
+{
+"73
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 73: (CCP1CONbits.CCP1M = ((uint_8)0x00));
+[e = . . _CCP1CONbits 0 0 -> -> 0 `i `uc ]
+"75
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 75:    (PIE1bits.CCP1IE = 0);
+[e = . . _PIE1bits 0 2 -> -> 0 `i `uc ]
+"78
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 78: }
+}
+[e :U 291 ]
+"79
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 79: return ret;
+[e ) _ret ]
+[e $UE 289  ]
+"80
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 80: }
+[e :UE 289 ]
+}
+"82
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 82: Std_ReturnType CCP1_IsCapturedData_Ready(uint_8 *captured_status){
+[v _CCP1_IsCapturedData_Ready `(uc ~T0 @X0 1 ef1`*uc ]
+{
+[e :U _CCP1_IsCapturedData_Ready ]
+[v _captured_status `*uc ~T0 @X0 1 r1 ]
+[f ]
+"83
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 83: Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"84
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 84: if(captured_status == ((void*)0)){
+[e $ ! == _captured_status -> -> -> 0 `i `*v `*uc 293  ]
+{
+"85
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 85: ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"86
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 86: }
+}
+[e $U 294  ]
+"87
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 87: else{
+[e :U 293 ]
+{
+"88
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 88:     if(PIR1bits.CCP1IF == 0x01){
+[e $ ! == -> . . _PIR1bits 0 2 `i -> 1 `i 295  ]
+{
+"89
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 89:     *captured_status = 0x01;
+[e = *U _captured_status -> -> 1 `i `uc ]
+"90
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 90:     (PIR1bits.CCP1IF = 0);
+[e = . . _PIR1bits 0 2 -> -> 0 `i `uc ]
+"91
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 91:     }
+}
+[e $U 296  ]
+"92
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 92:     else{
+[e :U 295 ]
+{
+"93
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 93:      *captured_status = 0x00;
+[e = *U _captured_status -> -> 0 `i `uc ]
+"94
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 94:     }
+}
+[e :U 296 ]
+"96
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 96: }
+}
+[e :U 294 ]
+"97
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 97: return ret;
+[e ) _ret ]
+[e $UE 292  ]
+"98
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 98: }
+[e :UE 292 ]
+}
+"99
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 99: Std_ReturnType CCP1_Captured_Mode_Read_Value(uint_16 *captured_value){
+[v _CCP1_Captured_Mode_Read_Value `(uc ~T0 @X0 1 ef1`*us ]
+{
+[e :U _CCP1_Captured_Mode_Read_Value ]
+[v _captured_value `*us ~T0 @X0 1 r1 ]
+[f ]
+"100
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 100: Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+[v F3082 `S274 ~T0 @X0 1 s ]
+[i F3082
+:U 0
+:U ..
+:U ..
+:U ..
+"101
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 101: CCP1_PERIOD_REG_T capure_temp_value = {.ccp1_low = 0,.ccp1_high = 0 };
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+..
+..
+]
+[v _capure_temp_value `S274 ~T0 @X0 1 a ]
+[e = _capure_temp_value F3082 ]
+"102
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 102: if(captured_value == ((void*)0)){
+[e $ ! == _captured_value -> -> -> 0 `i `*v `*us 298  ]
+{
+"103
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 103: ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"104
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 104: }
+}
+[e $U 299  ]
+"105
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 105: else{
+[e :U 298 ]
+{
+"106
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 106: capure_temp_value.ccp1_low = CCPR1L;
+[e = . . _capure_temp_value 0 0 _CCPR1L ]
+"107
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 107: capure_temp_value.ccp1_high = CCPR1H;
+[e = . . _capure_temp_value 0 1 _CCPR1H ]
+"108
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 108: *captured_value = capure_temp_value.ccp1_16bit;
+[e = *U _captured_value . . _capure_temp_value 1 0 ]
+"109
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 109: }
+}
+[e :U 299 ]
+"110
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 110:  return ret;
+[e ) _ret ]
+[e $UE 297  ]
+"111
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 111: }
+[e :UE 297 ]
+}
+"116
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 116: Std_ReturnType CCP1_COMPARE_Init(const ccp1_t *ccp1_obj){
+[v _CCP1_COMPARE_Init `(uc ~T0 @X0 1 ef1`*CS277 ]
+{
+[e :U _CCP1_COMPARE_Init ]
+[v _ccp1_obj `*CS277 ~T0 @X0 1 r1 ]
+[f ]
+"117
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 117: Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"118
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 118: if(ccp1_obj == ((void*)0)){
+[e $ ! == _ccp1_obj -> -> -> 0 `i `*v `*CS277 301  ]
+{
+"119
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 119: ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"120
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 120: }
+}
+[e $U 302  ]
+"121
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 121: else{
+[e :U 301 ]
+{
+"122
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 122:       (CCP1CONbits.CCP1M = ((uint_8)0x00));
+[e = . . _CCP1CONbits 0 0 -> -> 0 `i `uc ]
+"123
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 123:      if(ccp1_obj->ccp1_mode == CCP1_COMPARE_MODE_SELECTED)
+[e $ ! == -> . *U _ccp1_obj 0 `ui -> . `E3032 1 `ui 303  ]
+"124
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 124:     {
+{
+"125
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 125:         switch(ccp1_obj->ccp1_mode_variant){
+[e $U 305  ]
+{
+"126
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 126:            case ((uint_8)0x08):
+[e :U 306 ]
+"127
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 127:            (CCP1CONbits.CCP1M = ((uint_8)0x08));
+[e = . . _CCP1CONbits 0 0 -> -> 8 `i `uc ]
+"128
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 128:            break;
+[e $U 304  ]
+"129
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 129:            case ((uint_8)0x09):
+[e :U 307 ]
+"130
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 130:            (CCP1CONbits.CCP1M = ((uint_8)0x09));
+[e = . . _CCP1CONbits 0 0 -> -> 9 `i `uc ]
+"131
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 131:            break;
+[e $U 304  ]
+"132
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 132:            case ((uint_8)0x02):
+[e :U 308 ]
+"133
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 133:            (CCP1CONbits.CCP1M = ((uint_8)0x02));
+[e = . . _CCP1CONbits 0 0 -> -> 2 `i `uc ]
+"134
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 134:            break;
+[e $U 304  ]
+"135
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 135:            case ((uint_8)0x0A):
+[e :U 309 ]
+"136
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 136:            (CCP1CONbits.CCP1M = ((uint_8)0x0A));
+[e = . . _CCP1CONbits 0 0 -> -> 10 `i `uc ]
+"137
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 137:            break;
+[e $U 304  ]
+"138
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 138:            case ((uint_8)0x0B):
+[e :U 310 ]
+"139
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 139:            (CCP1CONbits.CCP1M = ((uint_8)0x0B));
+[e = . . _CCP1CONbits 0 0 -> -> 11 `i `uc ]
+"140
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 140:            break;
+[e $U 304  ]
+"141
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 141:            default: ret = (Std_ReturnType)0x00;
+[e :U 311 ]
+[e = _ret -> -> 0 `i `uc ]
+"142
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 142:       }
+}
+[e $U 304  ]
+[e :U 305 ]
+[e [\ -> . *U _ccp1_obj 1 `i , $ -> -> -> 8 `i `uc `i 306
+ , $ -> -> -> 9 `i `uc `i 307
+ , $ -> -> -> 2 `i `uc `i 308
+ , $ -> -> -> 10 `i `uc `i 309
+ , $ -> -> -> 11 `i `uc `i 310
+ 311 ]
+[e :U 304 ]
+"143
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 143:          ret = gpio_pin_intialize(&(ccp1_obj->ccp1_pin));
+[e = _ret ( _gpio_pin_intialize (1 &U . *U _ccp1_obj 2 ]
+"145
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 145: (PIE1bits.CCP1IE = 1);
+[e = . . _PIE1bits 0 2 -> -> 1 `i `uc ]
+"146
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 146: (PIR1bits.CCP1IF = 0);
+[e = . . _PIR1bits 0 2 -> -> 0 `i `uc ]
+"147
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 147: CCPI_Interrupt_Hundeler = ccp1_obj->CCP1_Interrupt_Hundeler;
+[e = _CCPI_Interrupt_Hundeler . *U _ccp1_obj 6 ]
+"160
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 160:   (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"161
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 161:   (INTCONbits.PEIE = 0);
+[e = . . _INTCONbits 1 6 -> -> 0 `i `uc ]
+"165
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 165:      }
+}
+[e :U 303 ]
+"166
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 166: }
+}
+[e :U 302 ]
+"167
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 167: return ret;
+[e ) _ret ]
+[e $UE 300  ]
+"168
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 168: }
+[e :UE 300 ]
+}
+"170
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 170: Std_ReturnType CCP1_COMPARE_Deinit(const ccp1_t *ccp1_obj){
+[v _CCP1_COMPARE_Deinit `(uc ~T0 @X0 1 ef1`*CS277 ]
+{
+[e :U _CCP1_COMPARE_Deinit ]
+[v _ccp1_obj `*CS277 ~T0 @X0 1 r1 ]
+[f ]
+"171
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 171: Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"172
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 172: if(ccp1_obj == ((void*)0)){
+[e $ ! == _ccp1_obj -> -> -> 0 `i `*v `*CS277 313  ]
+{
+"173
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 173: ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"174
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 174: }
+}
+[e $U 314  ]
+"175
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 175: else{
+[e :U 313 ]
+{
+"176
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 176: (CCP1CONbits.CCP1M = ((uint_8)0x00));
+[e = . . _CCP1CONbits 0 0 -> -> 0 `i `uc ]
+"178
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 178:    (PIE1bits.CCP1IE = 0);
+[e = . . _PIE1bits 0 2 -> -> 0 `i `uc ]
+"180
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 180: }
+}
+[e :U 314 ]
+"181
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 181: return ret;
+[e ) _ret ]
+[e $UE 312  ]
+"182
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 182: }
+[e :UE 312 ]
+}
+"184
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 184: Std_ReturnType CCP1_IsCompare_Completed(uint_8 *compare_status){
+[v _CCP1_IsCompare_Completed `(uc ~T0 @X0 1 ef1`*uc ]
+{
+[e :U _CCP1_IsCompare_Completed ]
+[v _compare_status `*uc ~T0 @X0 1 r1 ]
+[f ]
+"185
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 185: Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"186
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 186: if(compare_status == ((void*)0)){
+[e $ ! == _compare_status -> -> -> 0 `i `*v `*uc 316  ]
+{
+"187
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 187: ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"188
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 188: }
+}
+[e $U 317  ]
+"189
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 189: else{
+[e :U 316 ]
+{
+"190
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 190:     if(PIR1bits.CCP1IF == 0x01){
+[e $ ! == -> . . _PIR1bits 0 2 `i -> 1 `i 318  ]
+{
+"191
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 191:     *compare_status = 0x01;
+[e = *U _compare_status -> -> 1 `i `uc ]
+"192
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 192:     (PIR1bits.CCP1IF = 0);
+[e = . . _PIR1bits 0 2 -> -> 0 `i `uc ]
+"193
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 193:     }
+}
+[e $U 319  ]
+"194
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 194:     else{
+[e :U 318 ]
+{
+"195
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 195:         *compare_status = 0x00;
+[e = *U _compare_status -> -> 0 `i `uc ]
+"196
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 196:     }
+}
+[e :U 319 ]
+"199
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 199: }
+}
+[e :U 317 ]
+"200
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 200: return ret;
+[e ) _ret ]
+[e $UE 315  ]
+"201
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 201: }
+[e :UE 315 ]
+}
+"203
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 203: Std_ReturnType CCP1_Compare_Mode_Set_Value(uint_16 compare_value){
+[v _CCP1_Compare_Mode_Set_Value `(uc ~T0 @X0 1 ef1`us ]
+{
+[e :U _CCP1_Compare_Mode_Set_Value ]
+[v _compare_value `us ~T0 @X0 1 r1 ]
+[f ]
+"204
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 204: Std_ReturnType ret = (Std_ReturnType)0x00;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+[v F3099 `S274 ~T0 @X0 1 s ]
+[i F3099
+:U 0
+:U ..
+:U ..
+:U ..
+"205
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 205: CCP1_PERIOD_REG_T compare_temp_value = {.ccp1_low = 0,.ccp1_high = 0 };
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+..
+..
+]
+[v _compare_temp_value `S274 ~T0 @X0 1 a ]
+[e = _compare_temp_value F3099 ]
+"206
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 206: compare_temp_value.ccp1_16bit = compare_value;
+[e = . . _compare_temp_value 1 0 _compare_value ]
+"207
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 207: CCPR1L = compare_temp_value.ccp1_low;
+[e = _CCPR1L . . _compare_temp_value 0 0 ]
+"208
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 208: CCPR1H = compare_temp_value.ccp1_high;
+[e = _CCPR1H . . _compare_temp_value 0 1 ]
+"209
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 209: ret = (Std_ReturnType)0x01;
+[e = _ret -> -> 1 `i `uc ]
+"210
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 210: return ret;
+[e ) _ret ]
+[e $UE 320  ]
+"211
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 211: }
+[e :UE 320 ]
+}
+"217
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 217: Std_ReturnType CCP1_PWM_Init(const ccp1_t *ccp1_obj){
+[v _CCP1_PWM_Init `(uc ~T0 @X0 1 ef1`*CS277 ]
+{
+[e :U _CCP1_PWM_Init ]
+[v _ccp1_obj `*CS277 ~T0 @X0 1 r1 ]
+[f ]
+"218
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 218: Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"219
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 219: if(ccp1_obj == ((void*)0)){
+[e $ ! == _ccp1_obj -> -> -> 0 `i `*v `*CS277 322  ]
+{
+"220
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 220: ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"221
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 221: }
+}
+[e $U 323  ]
+"222
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 222: else{
+[e :U 322 ]
+{
+"223
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 223:     (CCP1CONbits.CCP1M = ((uint_8)0x0C));
+[e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
+"225
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 225: if(ccp1_obj->ccp1_mode == CCP1_PWM_MODE_SELECTED){
+[e $ ! == -> . *U _ccp1_obj 0 `ui -> . `E3032 2 `ui 324  ]
+{
+"226
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 226:          if(ccp1_obj->ccp1_mode_variant == ((uint_8)0x0C)){
+[e $ ! == -> . *U _ccp1_obj 1 `i -> -> -> 12 `i `uc `i 325  ]
+{
+"227
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 227:          (CCP1CONbits.CCP1M = ((uint_8)0x0C));
+[e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
+"228
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 228:  PR2 = (uint_8)((4000000UL/(ccp1_obj->PWM_Freq * 4.0 * ccp1_obj->timer2_prescaler_value * ccp1_obj->timer2_postscaler_value))-1);
+[e = _PR2 -> - / -> -> 4000000 `ul `d * * * -> . *U _ccp1_obj 3 `d .4.0 -> -> . *U _ccp1_obj 4 `i `d -> -> . *U _ccp1_obj 5 `i `d -> -> 1 `i `d `uc ]
+"229
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 229:          }
+}
+[e $U 326  ]
+"230
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 230:          else{}
+[e :U 325 ]
+{
+}
+[e :U 326 ]
+"231
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 231:          ret = gpio_pin_intialize(&(ccp1_obj->ccp1_pin));
+[e = _ret ( _gpio_pin_intialize (1 &U . *U _ccp1_obj 2 ]
+"233
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 233: }
+}
+[e $U 327  ]
+"234
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 234:      else{}
+[e :U 324 ]
+{
+}
+[e :U 327 ]
+"238
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 238: (PIE1bits.CCP1IE = 1);
+[e = . . _PIE1bits 0 2 -> -> 1 `i `uc ]
+"239
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 239: (PIR1bits.CCP1IF = 0);
+[e = . . _PIR1bits 0 2 -> -> 0 `i `uc ]
+"240
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 240: CCPI_Interrupt_Hundeler = ccp1_obj->CCP1_Interrupt_Hundeler;
+[e = _CCPI_Interrupt_Hundeler . *U _ccp1_obj 6 ]
+"253
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 253:   (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"254
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 254:   (INTCONbits.PEIE = 0);
+[e = . . _INTCONbits 1 6 -> -> 0 `i `uc ]
+"258
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 258:     (CCP1CONbits.CCP1M = ((uint_8)0x00));
+[e = . . _CCP1CONbits 0 0 -> -> 0 `i `uc ]
+"259
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 259: }
+}
+[e :U 323 ]
+"260
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 260: return ret;
+[e ) _ret ]
+[e $UE 321  ]
+"261
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 261: }
+[e :UE 321 ]
+}
+"263
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 263: Std_ReturnType CCP1_PWM_Deinit(const ccp1_t *ccp1_obj){
+[v _CCP1_PWM_Deinit `(uc ~T0 @X0 1 ef1`*CS277 ]
+{
+[e :U _CCP1_PWM_Deinit ]
+[v _ccp1_obj `*CS277 ~T0 @X0 1 r1 ]
+[f ]
+"264
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 264: Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"265
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 265: if(ccp1_obj == ((void*)0)){
+[e $ ! == _ccp1_obj -> -> -> 0 `i `*v `*CS277 329  ]
+{
+"266
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 266: ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"267
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 267: }
+}
+[e $U 330  ]
+"268
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 268: else{
+[e :U 329 ]
+{
+"269
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 269:     (CCP1CONbits.CCP1M = ((uint_8)0x00));
+[e = . . _CCP1CONbits 0 0 -> -> 0 `i `uc ]
+"271
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 271:    (PIE1bits.CCP1IE = 0);
+[e = . . _PIE1bits 0 2 -> -> 0 `i `uc ]
+"273
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 273: }
+}
+[e :U 330 ]
+"274
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 274: return ret;
+[e ) _ret ]
+[e $UE 328  ]
+"275
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 275: }
+[e :UE 328 ]
+}
+"277
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 277: Std_ReturnType CCP1_PWM1_Set_Duty(const uint_8 duty){
+[v _CCP1_PWM1_Set_Duty `(uc ~T0 @X0 1 ef1`Cuc ]
+{
+[e :U _CCP1_PWM1_Set_Duty ]
+[v _duty `Cuc ~T0 @X0 1 r1 ]
+[f ]
+"278
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 278: Std_ReturnType ret = (Std_ReturnType)0x00;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"279
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 279: uint_16 l_duty_temp = 0;
+[v _l_duty_temp `us ~T0 @X0 1 a ]
+[e = _l_duty_temp -> -> 0 `i `us ]
+"280
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 280: l_duty_temp = (uint_16)(((PR2 + 1) *(duty / 100.0)) * 4);
+[e = _l_duty_temp -> * * -> + -> _PR2 `i -> 1 `i `d / -> -> _duty `i `d .100.0 -> -> 4 `i `d `us ]
+"281
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 281: CCP1CONbits.DC1B = (uint_8)(l_duty_temp & 0x0003);
+[e = . . _CCP1CONbits 0 1 -> & -> _l_duty_temp `ui -> -> 3 `i `ui `uc ]
+"282
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 282: CCPR1L = (uint_8)(l_duty_temp >> 2);
+[e = _CCPR1L -> >> -> _l_duty_temp `ui -> 2 `i `uc ]
+"283
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 283: ret = (Std_ReturnType)0x01;
+[e = _ret -> -> 1 `i `uc ]
+"284
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 284:  return ret;
+[e ) _ret ]
+[e $UE 331  ]
+"285
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 285: }
+[e :UE 331 ]
+}
+"287
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 287: Std_ReturnType CCP1_PWM1_Start(void){
+[v _CCP1_PWM1_Start `(uc ~T0 @X0 1 ef ]
+{
+[e :U _CCP1_PWM1_Start ]
+[f ]
+"288
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 288: Std_ReturnType ret = (Std_ReturnType)0x00;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"289
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 289: CCP1CONbits.CCP1M = ((uint_8)0x0C);
+[e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
+"290
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 290: ret = (Std_ReturnType)0x01;
+[e = _ret -> -> 1 `i `uc ]
+"291
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 291: return ret;
+[e ) _ret ]
+[e $UE 332  ]
+"293
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 293: }
+[e :UE 332 ]
+}
+"295
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 295: Std_ReturnType CCP1_PWM1_Stop(void){
+[v _CCP1_PWM1_Stop `(uc ~T0 @X0 1 ef ]
+{
+[e :U _CCP1_PWM1_Stop ]
+[f ]
+"296
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 296: Std_ReturnType ret = (Std_ReturnType)0x00;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"297
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 297: CCP1CONbits.CCP1M = ((uint_8)0x00);
+[e = . . _CCP1CONbits 0 0 -> -> 0 `i `uc ]
+"298
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 298: ret = (Std_ReturnType)0x01;
+[e = _ret -> -> 1 `i `uc ]
+"299
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 299:  return ret;
+[e ) _ret ]
+[e $UE 333  ]
+"301
+[; ;MCAL_Layer/CCP1/hal_ccp1.c: 301: }
+[e :UE 333 ]
+}
